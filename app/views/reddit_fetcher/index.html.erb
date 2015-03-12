@@ -1,1 +1,7 @@
-HEY MANNNNNNNN
+
+<% comments = RedditFetcher.new %>
+<% 0.upto(comments.first_layer_length-1) do |i| %>
+<p><%=   comments.first_layer(i) %></p>
+<% end %>
+
+<%# comments.first_layer %>
