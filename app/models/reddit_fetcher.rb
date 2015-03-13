@@ -47,11 +47,17 @@ class RedditFetcher
      "they", "or", "so", "yet", "nor", "either", "neither", "as", "to",
      "did", "got", "of", "he", "she", "has", "have", "their", "there", "they're",
      "are", "am", "who", "his", "hers", "how", "when", "why", "all", "because",
-     "in", "on"]
+     "in", "on", "though", "thus", "therefore"]
    array.each do |x|
      @comment_count.delete(x)
    end
-   @comment_count.max_by{|k, v| v}
+   word = @comment_count.max_by{|k, v| v}[0]
+ end
+
+ def search_key
+   @comments << first_layer
+   most_common
+   largest_hash_key
  end
 
 end
